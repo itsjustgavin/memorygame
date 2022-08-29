@@ -77,15 +77,23 @@ function nextSequence() {
 
 //user clicking on button
 
+
 $(".btn").click(function() {
+
+    if (started === false) {
+        
+        alert("You have to press a keyboard button to start the game");
+
+    }
+    else {
     // (this) is the button that was clicked, ("id") is the id of the button that holds the color value
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     $(this).addClass("pressed");
 checkAnswer(userClickedPattern.length - 1);
+    }
 });
-
  
   
 
